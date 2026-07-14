@@ -1,0 +1,33 @@
+// link :- https://atcoder.jp/contests/abc186/submissions/77487858
+// code
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define fast_io ios::sync_with_stdio(false); cin.tie(nullptr);
+#define endl '\n'
+#define all(v) (v).begin(), (v).end()
+#define pb push_back
+#define mod 1000000007
+
+void solve() {
+    // Your 
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    for(auto &i:v) cin>>i;
+    sort(all(v));
+    int ans = 0;
+    for(int i=0;i<n;i++){
+        int pos = v[i]*(n-1);
+        int neg = v[i]*(n-1-i)*2;
+        ans += (pos-neg);
+    }
+    cout<<ans<<endl;
+}
+
+int32_t main() {
+    fast_io;
+    int t = 1;
+    // cin >> t;
+    while (t--) solve();
+}
